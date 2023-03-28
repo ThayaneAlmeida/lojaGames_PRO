@@ -34,8 +34,12 @@ public class Produto {
 	private BigDecimal preco;
 	
 	@ManyToOne
-	@JsonIgnoreProperties("categoria")
+	@JsonIgnoreProperties("produto")
 	private Categoria categoria;
+	
+	@ManyToOne
+	@JsonIgnoreProperties("produto")
+	private Usuario usuario;
 	
 	public Long getId() {
 		return id;
@@ -43,14 +47,6 @@ public class Produto {
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public String getNomeProduto() {
-		return nomeJogo;
-	}
-
-	public void setNomeProduto(String nomeJogo) {
-		this.nomeJogo = nomeJogo;
 	}
 
 	public String getMarca() {
@@ -76,4 +72,22 @@ public class Produto {
 	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
 	}
+
+	public String getNomeJogo() {
+		return nomeJogo;
+	}
+
+	public void setNomeJogo(String nomeJogo) {
+		this.nomeJogo = nomeJogo;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+	
+	
 }
